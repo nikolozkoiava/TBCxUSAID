@@ -1,0 +1,687 @@
+/* Root Variables: Defines the core design system variables for the website such as fonts, base font size, and site width */
+:root {
+  --main-font: "TBC X";
+  --base-font-size: 1rem; /* Equivalent to 16px */
+  --site-width: 61.25rem; /* Equivalent to 980px */
+}
+
+/* Main Container: Sets up the basic styling for the main wrapper of the website, including border, background color, and padding */
+.container {
+  /* border: 1px solid red; */
+  background-color: #2b2b2b;
+  padding-top: 5.269rem;
+}
+
+/* Header Styling: Styles for the fixed header, including positioning, background color, and transition effects */
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 84px;
+  background-color: #1a1e1f;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+/* Transparent Header Modifier: Changes the header background color on specific conditions */
+.header.transparent {
+  background-color: #222222f2;
+}
+/* Logo Styling: Defines the size and padding for the logo section in the header */
+.logo {
+  width: calc(545.5 / 1707 * 100%);
+  padding: 22px 0px 22px calc((100% - 980px) * 0.5);
+}
+/* Navigation Styling: Layout for the main navigation menu */
+.navigation {
+  width: calc(800 / 1707 * 100%);
+  padding: 29px 0px 29px calc((100% - 962px) * 0.5);
+}
+.navigation .pages {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: space-between;
+  column-gap: 5px;
+  width: 100%;
+}
+.main_page,
+.tbc_it,
+.tbc_x_USAID,
+.risks {
+  padding: 0 10px;
+}
+
+.pages a {
+  transition: color 0.5s ease;
+}
+
+.pages a:hover {
+  color: #00a3e0;
+}
+/* Active and Inactive Link Styles: Differentiating styles for active and non-active navigation links */
+.noactive,
+.active {
+  text-align: right;
+  font-family: var(--main-font);
+  font-size: calc(0.861 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.noactive {
+  color: #f4f4f4;
+}
+
+.active {
+  color: #00a3e0;
+}
+/* Sidebar Styling: Styles for the mobile sidebar menu, including positioning and display properties */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  z-index: 999;
+  background-color: #1a1e1f;
+  display: none;
+  flex-direction: column;
+  padding: 40px 10px;
+  row-gap: 20px;
+}
+.sidebar li {
+  margin-left: auto;
+}
+.sidebar a {
+  margin-left: auto;
+  width: 100%;
+}
+.fa-xmark {
+  justify-content: center;
+  margin-left: auto;
+  padding: 0px 20px 50px 0px;
+}
+/* Burger Menu Icon: Styles for the burger menu icon, visible only in mobile view */
+.burger {
+  margin-left: auto;
+  padding: 0px 20px 0px 0px;
+  display: none;
+}
+/* Responsive Design Adjustments: Styles that apply when the viewport width is 800px or less */
+@media (max-width: 800px) {
+  .hideOnmobile {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .logo {
+    margin-left: 10px;
+  }
+}
+
+/* Main Section Styles: Sets the width for the main content area */
+main {
+  width: 100%;
+}
+
+/* Background Image Container: Positions and sizes the background image, ensuring full width and fixed height */
+.background_img_container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 352px;
+}
+
+.background_img_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Background Image Text: Styles for the overlay text on the background image, centered with flexbox */
+.background_img_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 10px;
+  width: var(--site-width);
+  max-width: 100%;
+}
+
+.background_img_text h1,
+.background_img_text span {
+  color: #f4f4f4;
+  font-family: var(--main-font);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-right: auto;
+}
+
+.background_img_text h1 {
+  font-size: calc(2.625 * var(--base-font-size));
+}
+
+.background_img_text span {
+  font-size: calc(2.125 * var(--base-font-size));
+}
+
+@media (max-width: 768px) {
+  .background_img_text {
+    width: 100%;
+  }
+  .background_img_text h1 {
+    font-size: calc(2 * var(--base-font-size));
+  }
+
+  .background_img_text span {
+    font-size: calc(1.5 * var(--base-font-size));
+  }
+}
+
+/* informational text */
+/* Informational Text Styling: Styles for the descriptive text block, including margins, padding, and typography */
+.informational_text {
+  margin: auto;
+  padding: 56px 0px 43px 0px;
+  width: calc(990 / 1707 * 100%);
+  height: 100%;
+}
+.informational_text p {
+  color: #f4f4f4;
+  font-family: var(--main-font);
+  font-size: calc(1.723 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 44.8px;
+  margin-bottom: 50px;
+}
+
+.informational_text span {
+  color: #00aef3;
+  font-family: var(--main-font);
+  font-size: calc(1.25 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.informational_text span:hover {
+  color: #a7a7a7;
+}
+/* Responsive Adjustments: Adaptations for background text on smaller screens */
+@media (max-width: 768px) {
+  .informational_text {
+    width: 80%;
+  }
+
+  .informational_text p {
+    font-size: calc(1 * var(--base-font-size));
+  }
+}
+
+/* Courses container */
+/* Courses Container: Styles for the course list container including background color and padding */
+.courses_container {
+  background-color: #161616;
+  margin-top: 0.938rem;
+  padding: 0px 0px 45.5px 0px;
+}
+
+.list_courses_main {
+  width: calc(990 / 1707 * 100%);
+  margin: 0 auto;
+}
+.list_courses_main h3 {
+  color: #dbdbdb;
+  font-family: var(--main-font);
+  font-size: calc(1.477 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 34px 0px 67px 0px;
+}
+/* Course Listing Grid: Layout settings for displaying course lists in a responsive grid */
+.list_courses_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 39px;
+  grid-row-gap: 23px;
+}
+
+.list_courses {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555555;
+  border-radius: 1.5%;
+  overflow: hidden;
+}
+
+.course_name,
+.registration_text,
+.registration_text_cy,
+.Course_details_text {
+  color: #f4f4f4;
+  font-family: var(--main-font);
+  font-weight: 500;
+}
+
+.course_name {
+  font-size: calc(1.107 * var(--base-font-size));
+  line-height: 162.54%;
+  white-space: nowrap;
+  margin: 34px 0 25px 22px;
+}
+
+.registration_text,
+.registration_text_cy {
+  font-size: calc(0.861 * var(--base-font-size));
+  line-height: 162.54%;
+  white-space: nowrap;
+  padding: 0px 0px 103.5px 22px;
+}
+
+.registration_text_cy {
+  padding: 0px 0px 76px 22px;
+}
+
+.Course_details_text {
+  color: #00aeef;
+  font-size: calc(1 * var(--base-font-size));
+  line-height: 160%;
+  margin: 0px 22px 26.7px 22px;
+  display: flex;
+  align-items: center;
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+
+.Course_details_text:hover {
+  color: #3e5b8a;
+}
+
+.Course_details_text svg {
+  margin-right: 0.625rem;
+}
+
+/* slider container  */
+/* Slider Container: Styles for the partners' slider including positioning and margins */
+.slider_container_text {
+  width: calc(980 / 1707 * 100%);
+  margin: auto;
+  padding: 34px 0px 31px 0px;
+}
+
+.slider_container_text h4 {
+  color: #f4f4f4;
+  font-family: var(--main-font);
+  font-size: calc(1.476 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 162.54%;
+}
+
+.slider_container {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.slider {
+  width: 100%;
+  max-width: 980px;
+  height: 225px;
+  margin: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.slider .list {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+.buttons {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+/* Slider Items: Styling for individual items in the slider */
+.item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.item img {
+  width: 25%;
+  height: auto;
+  margin: 20px;
+}
+.ufc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons button {
+  width: 18px;
+  height: 35px;
+  border: none;
+  background-color: transparent;
+}
+.slider .dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.slider .dots li {
+  list-style: none;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  margin: 8px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+/* Responsive Slider Adjustments (Medium Screens): Adjusts slider layout and item images for screens up to 980px wide */
+@media (max-width: 980px) {
+  .slider {
+    height: calc(350px + 50px);
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item img {
+    width: 30%;
+  }
+
+  .buttons button {
+    display: none;
+  }
+}
+/* Responsive Slider Adjustments (Small Screens): Further adjusts item images for screens up to 600px wide */
+@media (max-width: 600px) {
+  .item img {
+    width: 50%;
+  }
+}
+
+/* Section Background */
+
+.section_background {
+  width: 100%;
+  background-color: #161616;
+  height: 100%;
+  align-self: stretch;
+}
+
+.section {
+  width: calc(980 / 1707 * 100%);
+  margin: 0 auto;
+  padding: 30px 40px 39.2px 40px;
+}
+.section_container {
+  display: flex;
+  flex-direction: column;
+  margin: 75px 0 32px 0;
+}
+
+.container_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+.container_title h4,
+.container_title span {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.container_title h4 {
+  color: #f4f4f4;
+  font-size: calc(23.625 / 16 * var(--base-font-size));
+  line-height: 121.905%;
+}
+
+.container_title span {
+  color: #00aef3;
+  font-size: calc(20 / 16 * var(--base-font-size));
+  line-height: 140%;
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+
+.container_title span:hover {
+  color: #a7a7a7;
+}
+
+/*  Frequently asked questions container  */
+/* FAQ Section: Styles for the frequently asked questions section including layout, typography, and interactive elements */
+.faq {
+  padding: 32px 0 30px 0;
+  border-bottom: 1px solid #353131;
+  cursor: pointer;
+}
+/* Question Style: Flex layout for each question in the FAQ section */
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question h5,
+.introduction {
+  color: #f4f4f4;
+  font-family: var(--main-font);
+  font-weight: 500;
+}
+
+.question h5 {
+  font-size: calc(17.719 / 16 * var(--base-font-size));
+  font-style: normal;
+  line-height: normal;
+}
+
+.introduction {
+  margin: 2.5rem 0rem 1.5rem 0rem;
+  font-size: calc(0.875 * var(--base-font-size));
+  font-style: normal;
+  line-height: normal;
+}
+
+.main_answer {
+  margin-left: 21px;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.main_answer p,
+.main_answer1 {
+  color: #f4f4f4;
+  font-family: var(--main-font);
+  font-size: calc(0.875 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 180.54%;
+}
+
+.main_answer p {
+  padding-top: 1rem;
+}
+
+.main_answer1 {
+  padding-bottom: 1.5rem;
+  padding-top: 2.5rem;
+}
+
+.faq.open .answer {
+  max-height: 100%;
+  display: block;
+}
+/* Arrow Icon: Styles and transition for the arrow icon, indicating the opening and closing of answers */
+.faq.open .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  transition: transform 0.5s ease-in;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+}
+/* Responsive Adjustments: FAQ section styling for screens narrower than 1100px */
+@media screen and (max-width: 1100px) {
+  .section_container {
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .section_container span {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .arrow {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Footer */
+/* Footer Styling: Sets background color and layout for the footer */
+.footer {
+  background-color: #1b1e1f;
+}
+
+/* Footer Container: Alignment and spacing of elements within the footer */
+.footer_container {
+  width: calc(980 / 1707 * 100%);
+  margin: auto;
+  padding: 64px 0px 24.21px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_logo_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_logo_text img {
+  margin-bottom: 27px;
+}
+
+.footer_logo_text span {
+  color: #fff;
+  font-family: var(--main-font);
+  font-size: calc(13.781 / 16 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 162.54%;
+  margin-bottom: 18.79px;
+}
+
+.footer_icons {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 10px;
+  margin-bottom: 43.39px;
+}
+
+.footer_icons_buttons img {
+  width: 39px;
+  height: 39px;
+  object-fit: cover;
+}
+.footer_icons_buttons button {
+  display: flex;
+  width: 162px;
+  height: 39px;
+  padding: 0px 30.94px 0px 31.94px;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  color: #fff;
+  font-family: var(--main-font);
+  font-size: calc(15.75 / 16 * var(--base-font-size));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 162.54%;
+  background-color: #00aef3;
+  border-radius: 6px;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.footer_icons_buttons button:hover {
+  background-color: #d3d3d3;
+  color: #36343e;
+}
+/* Responsive Footer Adjustments: Adjusts footer layout for mobile view */
+@media screen and (max-width: 700px) {
+  .footer_container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .footer_logo_text {
+    order: 1;
+    margin-bottom: auto;
+  }
+
+  .footer_icons_buttons,
+  .footer_icons {
+    order: 2;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
