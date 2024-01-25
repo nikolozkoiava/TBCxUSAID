@@ -18,6 +18,7 @@ function initializeSlider(sliderSelector) {
       reloadSlider();
     }
   
+    
     let refreshInterval = setInterval(() => { next.click() }, 5000);
   
     function reloadSlider() {
